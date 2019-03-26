@@ -1,5 +1,63 @@
 # Angular Shop
 
+This exercise has two parts:
+
+1. Browsing the shop and viewing each item (Services, DI)
+2. The shopping cart (Observables, Routing)
+
+> TODO: Add a JSON file or other data file for shop items.
+## Setup
+
+```
+git clone
+cd ngshop
+npm install
+ng serve --open
+```
+
+# Lesson
+
+## Part I: The Shop
+
+1. Create a new component, `DogList`
+2. Create a class, `Dog`
+
+`DogList` should display a gallery of dogs along with their names. The data source for the dogs is stored in `dogdata.json`. 
+
+`tsconfig.json` is has been configured with 3 properties to handle JSON files: `resolveJsonModule, esModuleInterop, and allowSyntheticDefaultImports`. 
+
+With that, JSON files can be imported as follows: `import jsonName from `path/to/json;`
+
+**dogs.service.ts**
+- Import dogdata.json
+- Add a private property to `DogService` 
+
+**dog-list.component.ts**
+- Import `DogService`
+- Inject `DogService` into the constructor as `dogService`
+- Add a method `getAll()` which returns all the dogs.
+- Add property `dogs` with value `this.getAll()`
+
+**dog-list.component.html**
+- Create a div with `ngFor` directive to loop through dogs.
+- Display the dog name and image.
+
+### Components
+
+- DogList
+- DogDetail
+
+### Services
+
+- Dogs
+- Notifications
+
+### Models
+
+- Dog
+- Cart
+- Notification
+
 ## Stories
 
 **User**
