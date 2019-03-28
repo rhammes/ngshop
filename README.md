@@ -20,7 +20,7 @@ ng serve --open
 ## Part I: The Shop
 
 1. Create a new component, `DogList`
-2. Create a class, `Dog`
+2. OPTIONAL: Create a class, `Dog` (will work without this, use as a value add if needed for the lesson)
 
 `DogList` should display a gallery of dogs along with their names. The data source for the dogs is stored in `dogdata.json`. 
 
@@ -41,6 +41,9 @@ With that, JSON files can be imported as follows: `import jsonName from `path/to
 **dog-list.component.html**
 - Create a div with `ngFor` directive to loop through dogs.
 - Display the dog name and image.
+
+## Part II: Shopping Cart
+
 
 ### Components
 

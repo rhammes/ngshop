@@ -1,3 +1,3 @@
 export class Dog {
-  title = '';
+  name = '';
 }

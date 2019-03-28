@@ -7,14 +7,18 @@ import { DogsService } from '../services/dogs.service';
   styleUrls: ['./dog-list.component.css']
 })
 export class DogListComponent implements OnInit {
-  dogs = this.getAll();
+  dogs = this.dogService.all();
   constructor(private dogService: DogsService) { }
 
   ngOnInit() {
   }
 
-  getAll() {
-    return this.dogService.all();
+  /**
+   * Event handler for fetching a dog by ID.
+   * @param el
+   */
+  getDogById(el) {
+    return this.dogService.get(el.target.id);
   }
 
 }
