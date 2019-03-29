@@ -1,3 +1,5 @@
 export class Dog {
-  name = '';
+  id: string;
+  name: string;
+  thumbnail: string;
 }

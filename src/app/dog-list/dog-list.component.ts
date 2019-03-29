@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DogsService } from '../services/dogs.service';
+import { Dog } from '../dog'; // OPTIONAL: Observables value-add.
+
 
 @Component({
   selector: 'dog-list',
@@ -7,10 +9,15 @@ import { DogsService } from '../services/dogs.service';
   styleUrls: ['./dog-list.component.css']
 })
 export class DogListComponent implements OnInit {
-  dogs = this.dogService.all();
+  dogs: Dog[];
   constructor(private dogService: DogsService) { }
 
   ngOnInit() {
+    this.getUpdates();
+  }
+
+  getUpdates() {
+    return this.dogService.all().subscribe(data => this.dogs = data);
   }
 
   /**
