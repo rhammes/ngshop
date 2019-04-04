@@ -2,10 +2,9 @@
 
 This exercise has two parts:
 
-1. Browsing the shop and viewing each item (Services, DI)
-2. The shopping cart (Observables, Routing)
+1. Browsing dogs
+2. Adding a "likes" feature
 
-> TODO: Add a JSON file or other data file for shop items.
 ## Setup
 
 ```
@@ -15,9 +14,16 @@ npm install
 ng serve --open
 ```
 
-# Lesson
+# Objectives
 
-## Part I: The Shop
+We'll create a very simple application that displays a list of dogs. In this exercise you will:
+
+* Create components
+* Create services
+* Implement Dependency Injection (DI)
+* Explain services and DI
+
+## Part I: The Dog List
 
 1. Create a new component, `DogList`
 2. OPTIONAL: Create a class, `Dog` (will work without this, use as a value add if needed for the lesson)
@@ -30,7 +36,7 @@ With that, JSON files can be imported as follows: `import jsonName from `path/to
 
 **dogs.service.ts**
 - Import dogdata.json
-- Add a private property to `DogService` 
+- Add a private property `dogs` to `DogService` 
 
 **dog-list.component.ts**
 - Import `DogService`
@@ -42,8 +48,16 @@ With that, JSON files can be imported as follows: `import jsonName from `path/to
 - Create a div with `ngFor` directive to loop through dogs.
 - Display the dog name and image.
 
-## Part II: Shopping Cart
+## Part II: Likes
 
+Visitors to the site can look at the gallery of dogs and click a button if they like any of them.
+
+Implement the like button using the following guidelines.
+
+* Each dog has a like button
+* The like button should also have a counter to display the the number of likes
+* Create a new service `LikeService` which will keep track of the counter data
+* STRETCH GOAL (optional): Try to use `localStorage` to track and persist the likes for each dog!
 
 ### Components
 
@@ -53,24 +67,9 @@ With that, JSON files can be imported as follows: `import jsonName from `path/to
 ### Services
 
 - Dogs
-- Notifications
+- Likes
 
 ### Models
 
 - Dog
-- Cart
-- Notification
-
-## Stories
-
-**User**
-- Users can browse a gallery of products
-- Users can view a detail page for a product
-- Users can add an item to a shopping cart
-- Users can update/remove an item to a shopping cart
-
-**Cart**
-- Cart can contain a list of items.
-- Cart tracks quantity, item and cost
-- Cart displays total
-- Cart can notify user if an item is out of stock
+- Like
