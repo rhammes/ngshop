@@ -32,7 +32,7 @@ We'll create a very simple application that displays a list of dogs. In this exe
 
 `tsconfig.json` is has been configured with 3 properties to handle JSON files: `resolveJsonModule, esModuleInterop, and allowSyntheticDefaultImports`. 
 
-With that, JSON files can be imported as follows: `import jsonName from `path/to/json;`
+With that, JSON files can be imported as follows: `import jsonName from path/to/json;`
 
 **dogs.service.ts**
 - Import dogdata.json
