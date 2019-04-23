@@ -25,7 +25,7 @@ We'll create a very simple application that displays a list of dogs. In this exe
 
 ## Exercise
 
-Finish this application. The main features
+Finish this application. The main features:
 
 - Displays all the dogs
 - Visitors can like any of the dogs listed
@@ -58,5 +58,7 @@ With this configured, JSON files can be imported as follows: `import jsonName fr
 **`Dog` (class)**
 - has 3 properties: id, name and thumbnail, all are strings
 
-**`FavoritesService`**
-- manages data for user favorites
+#### Stretch Goals
+
+- add a feature for users to have a Favorites list
+- add a feature to notify users if a dog on their list has been liked.
