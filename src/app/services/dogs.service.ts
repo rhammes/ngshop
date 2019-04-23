@@ -9,7 +9,9 @@ import DOGS from '../dogdata.json';
 export class DogsService {
   // If using the Dog import, set to: private dogData: Dog[] = DOGS;
   private dogData = DOGS;
-  constructor() { }
+  constructor() {
+    localStorage.setItem('dogs', JSON.stringify([]));
+  }
 
   all(): Observable<Dog[]> {
     return of(this.dogData);
@@ -17,5 +19,14 @@ export class DogsService {
 
   get(dogId) {
     return this.dogData.filter(dog => dog.id === dogId);
+  }
+
+  getLikes(dogId) {
+    const likes = localStorage.getItem(dogId);
+    return parseInt(likes);
+  }
+
+  update(dog) {
+    localStorage.setItem(dog.id, dog.likes);
   }
 }

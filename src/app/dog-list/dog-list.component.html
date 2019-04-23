@@ -1,8 +1,5 @@
 <div class="py-5">
-    <div class="row">
-      <div class="card" style="width: 12rem;" *ngFor="let dog of dogs" [id]="dog.id">
-        <img [src]="dog.thumbnail" alt="dog image" class="card-img-top" />
-        <h5 class="card-title">{{ dog.name }}</h5>
-      </div>
+    <div class="row" >
+      <dog *ngFor="let dog of dogs" [id]="dog.id" [dog]="dog"></dog>
     </div>
 </div>
