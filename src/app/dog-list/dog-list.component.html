@@ -1,5 +1,18 @@
+<nav role="navigation">
+  <ul class="nav nav-tabs nav-fill font-weight-bold">
+    <li class="nav-item">
+      <button (click)="loadFavorites()">Favorites</button>
+    </li>
+    <li class="nav-item">
+      <button (click)="loadDogs()">All</button>
+    </li>
+  </ul>
+</nav>
 <div class="py-5">
-    <div class="row" >
-      <dog *ngFor="let dog of dogs" [id]="dog.id" [dog]="dog"></dog>
-    </div>
+  <div class="row" *ngIf="!viewFavorites">
+    <dog *ngFor="let dog of dogs" [id]="dog.id" [dog]="dog"></dog>
+  </div>
+  <div class="row" *ngIf="viewFavorites">
+    <dog *ngFor="let fav of favorites" [dog]="fav"></dog>
+  </div>
 </div>

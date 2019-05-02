@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DogsService } from '../services/dogs.service';
-import { Dog } from '../dog'; // OPTIONAL: Observables value-add.
-
+import { Dog } from '../dog';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'dog-list',
@@ -10,22 +10,28 @@ import { Dog } from '../dog'; // OPTIONAL: Observables value-add.
 })
 export class DogListComponent implements OnInit {
   dogs: Dog[];
-  constructor(private dogService: DogsService) { }
+  favorites: Dog[];
+  viewFavorites = false;
+
+  constructor(private dogService: DogsService,
+              private favoritesService: FavoritesService) {}
 
   ngOnInit() {
-    this.getUpdates();
-  }
-
-  getUpdates() {
-    return this.dogService.all().subscribe(data => this.dogs = data);
+    this.dogService.all().subscribe(data => this.dogs = data);
+    this.favoritesService.all().subscribe(favorites => this.favorites = favorites);
   }
 
   /**
-   * Event handler for fetching a dog by ID.
-   * @param el
+   * Load dogs
    */
-  getDogById(el) {
-    return this.dogService.get(el.target.id);
+  loadDogs() {
+    this.dogService.all().subscribe(data => this.dogs = data);
   }
 
+  /**
+   * Load favorite dogs
+   */
+  loadFavorites() {
+    this.dogs = this.favorites;
+  }
 }

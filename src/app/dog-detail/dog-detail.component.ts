@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Dog } from "../dog";
-import {DogsService} from "../services/dogs.service";
+import { Dog } from '../dog';
+import { DogsService } from '../services/dogs.service';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'dog',
@@ -11,16 +12,27 @@ export class DogDetailComponent implements OnInit {
   @Input() dog: Dog;
   @Input() id: any;
   likes: number;
+  favorites: any;
 
-  constructor(private dogService: DogsService) {}
+  constructor(private dogService: DogsService, private favoritesService: FavoritesService) {}
 
   ngOnInit() {
     this.likes = this.dogService.getLikes(this.dog.id) || 0;
+    this.favorites = this.favoritesService.all() || 0;
   }
 
+  /**
+   * Add a like to this dog
+   */
   addLike() {
     this.likes += 1;
     this.dogService.update({ id: this.dog.id, likes: this.likes });
   }
 
+  /**
+   * Add this dog to favorites list
+   */
+  addFav() {
+    this.favoritesService.update(this.dog);
+  }
 }
