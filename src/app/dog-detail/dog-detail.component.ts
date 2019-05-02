@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Dog } from '../dog';
+import { Dog } from '../models/dog';
 import { DogsService } from '../services/dogs.service';
-import { FavoritesService } from '../favorites.service';
+import { FavoritesService } from '../services/favorites.service';
 
 @Component({
   selector: 'dog',
@@ -11,7 +11,7 @@ import { FavoritesService } from '../favorites.service';
 export class DogDetailComponent implements OnInit {
   @Input() dog: Dog;
   @Input() id: any;
-  likes: number;
+  likes: number
   favorites: any;
 
   constructor(private dogService: DogsService, private favoritesService: FavoritesService) {}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DogsService } from '../services/dogs.service';
-import { Dog } from '../dog';
-import { FavoritesService } from '../favorites.service';
+import { Dog } from '../models/dog';
+import { FavoritesService } from '../services/favorites.service';
 
 @Component({
   selector: 'dog-list',

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs'; // OPTIONAL: Observables value-add
-import { Dog } from '../dog'; // OPTIONAL: Observables value-add.
+import { Dog } from '../models/dog'; // OPTIONAL: Observables value-add.
 import DOGS from '../dogdata.json';
-import { FavoritesService } from '../favorites.service';
 
 @Injectable({
   providedIn: 'root'
