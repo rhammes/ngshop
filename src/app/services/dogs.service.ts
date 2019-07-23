@@ -8,9 +8,14 @@ import DOGS from '../dogdata.json';
 })
 export class DogsService {
   // If using the Dog import, set to: private dogData: Dog[] = DOGS;
-  private dogData = DOGS;
+  private dogData: Dog[] = DOGS;
 
-  constructor() {}
+  constructor() {
+    const likes = localStorage.getItem('likes');
+    if (!likes) {
+      localStorage.setItem('likes', JSON.stringify([]));
+    }
+  }
 
   /**
    * Dog List
@@ -35,6 +40,7 @@ export class DogsService {
    */
   getLikes(dogId) {
     const likes = JSON.parse(localStorage.getItem('likes'));
+    // tslint:disable-next-line:radix
     return parseInt(likes[dogId]);
   }
 

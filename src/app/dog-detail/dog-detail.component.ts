@@ -11,7 +11,7 @@ import { FavoritesService } from '../services/favorites.service';
 export class DogDetailComponent implements OnInit {
   @Input() dog: Dog;
   @Input() id: any;
-  likes: number
+  likes: number;
   favorites: any;
 
   constructor(private dogService: DogsService, private favoritesService: FavoritesService) {}
