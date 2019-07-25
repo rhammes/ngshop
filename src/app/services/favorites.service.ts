@@ -9,7 +9,11 @@ export class FavoritesService {
   favorites: Dog[];
 
   constructor() {
-    this.favorites = JSON.parse(localStorage.getItem('favorites')) || localStorage.setItem('favorites', JSON.stringify([]));
+    const favs = localStorage.getItem('favorites');
+    if (!favs) {
+      localStorage.setItem('favorites', JSON.stringify([]));
+    }
+    this.favorites = JSON.parse(localStorage.getItem('favorites')) || {};
   }
 
   all(): Observable<Dog[]> {
