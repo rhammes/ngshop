@@ -24,6 +24,7 @@ describe('DogComponent', () => {
     dog = new Dog();
     dog.name = 'Fred';
     dog.thumbnail = 'this-is-our-src'
+    dog.likeCount = 0;
     component.dog = dog;
 
     compiled = fixture.debugElement.nativeElement;
@@ -33,7 +34,6 @@ describe('DogComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 
   it('should display name', () => {
     expect(compiled.querySelector('.dogname').textContent).toContain(dog.name);
@@ -47,8 +47,16 @@ describe('DogComponent', () => {
     expect(compiled.querySelector('button').textContent).toContain('Favorite');
   })
 
-  it ('should have a like button', () => {
-    expect(compiled.querySelector('button.like').textContent).toContain('Like');
+  it ('should have a like button that increments a count', () => {
+    let expectedCount = dog.likeCount;
+    let button = compiled.querySelector('button.like');
+    expect(button.textContent).toContain('Like ' + expectedCount);
+
+    button.click();
+    fixture.detectChanges();
+
+    ++expectedCount;
+    expect(button.textContent).toContain('Like ' + expectedCount);
   })
 
 });
