@@ -43,4 +43,12 @@ describe('DogComponent', () => {
     expect(compiled.querySelector('img').src).toContain(dog.thumbnail);
   })
 
+  it ('should have a favorite button', () => {
+    expect(compiled.querySelector('button').textContent).toContain('Favorite');
+  })
+
+  it ('should have a like button', () => {
+    expect(compiled.querySelector('button.like').textContent).toContain('Like');
+  })
+
 });
