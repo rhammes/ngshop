@@ -23,6 +23,7 @@ describe('DogComponent', () => {
 
     dog = new Dog();
     dog.name = 'Fred';
+    dog.thumbnail = 'this-is-our-src'
     component.dog = dog;
 
     compiled = fixture.debugElement.nativeElement;
@@ -37,5 +38,9 @@ describe('DogComponent', () => {
   it('should display name', () => {
     expect(compiled.querySelector('.dogname').textContent).toContain(dog.name);
   });
+
+  it ('should have an img with correct src', () => {
+    expect(compiled.querySelector('img').src).toContain(dog.thumbnail);
+  })
 
 });
