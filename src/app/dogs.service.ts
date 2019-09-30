@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
 import { Dog } from './dog';
 import { request } from 'https';
 
@@ -15,8 +17,8 @@ export class DogsService {
     })
   }
 
-  all(): Dog[] {
+  all(): Observable<Dog[]> {
 
-    return this.dogs;
+    return of(this.dogs);
   }
 }

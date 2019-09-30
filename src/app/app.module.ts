@@ -4,11 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DogComponent } from './dog/dog.component';
+import { DogListComponent } from './dog-list/dog-list.component';
+import { DogsService } from './dogs.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DogComponent
+    DogComponent,
+    DogListComponent,
+    DogsService,
   ],
   imports: [
     BrowserModule,
