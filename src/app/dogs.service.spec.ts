@@ -5,16 +5,8 @@ import { Dog } from './dog';
 
 
 describe('DogsService', () => {
-  //let testData: Dog[];
-
-
-  beforeEach(() => {
+   beforeEach(() => {
     TestBed.configureTestingModule({})
-    // testData = [
-    //   { "id": "4ziNJuYbfDius", "name": "relaxed bull dog GIF", "thumbnail": "https://media0.giphy.com/media/4ziNJuYbfDius/100.gif", "image": "https://media0.giphy.com/media/4ziNJuYbfDius/giphy.gif" }, 
-    //   { "id": "UlQI7xt5R2iuk", "name": "bull dog sleeping GIF", "thumbnail": "https://media3.giphy.com/media/UlQI7xt5R2iuk/100.gif", "image": "https://media3.giphy.com/media/UlQI7xt5R2iuk/giphy.gif" }
-    // ];
-
   });
 
   it('should be created', () => {
@@ -27,7 +19,8 @@ describe('DogsService', () => {
     it('should return all pooches', (done) => {
       const expectedCount: number = 100;
       const service: DogsService = TestBed.get(DogsService);
-      service.all().subscribe((data) => {
+      service.all().subscribe((data) =>
+       {
         expect(data.length).toEqual(expectedCount);
         done();
       })

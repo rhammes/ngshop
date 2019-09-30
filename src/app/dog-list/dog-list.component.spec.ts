@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DogListComponent } from './dog-list.component';
+import { DogComponent } from '../dog/dog.component';
 
 describe('DogListComponent', () => {
   let component: DogListComponent;
@@ -8,7 +9,7 @@ describe('DogListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DogListComponent]
+      declarations: [DogListComponent, DogComponent]
     })
       .compileComponents();
   }));

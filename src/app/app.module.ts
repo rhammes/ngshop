@@ -12,13 +12,14 @@ import { DogsService } from './dogs.service';
     AppComponent,
     DogComponent,
     DogListComponent,
-    DogsService,
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    DogsService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
