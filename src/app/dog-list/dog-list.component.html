@@ -1,5 +1,6 @@
-<div class="dog-list-component"
-*ngFor="let dog of dogs">
- <app-dog dog="dog"></app-dog>
+<div class="dog-list-component">
+ <app-dog
+ *ngFor="let dog of dogs"
+ [dog]="dog"></app-dog>
 
 </div>
