@@ -1,7 +1,6 @@
 import { Dog } from './dog';
 
 export class Favorite {
-    username: string;
     dogs: Dog[] = [];
 
     toggleDog(dog: Dog) {
