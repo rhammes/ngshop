@@ -1,11 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { DogListComponent } from './dog-list/dog-list.component';
+import { DogComponent } from './dog/dog.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        DogListComponent,
+        DogComponent,
       ],
     }).compileComponents();
   }));
