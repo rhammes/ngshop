@@ -5,18 +5,19 @@ describe('Favorite', () => {
   it('should create an instance', () => {
     expect(new Favorite()).toBeTruthy();
   });
-  describe('addDog()', () => {
+
+  describe('toggleDog()', () => {
     it('should add to dogs array', () => {
       const expectedDogCount: number = 1;
       const favorite: Favorite = new Favorite();
       const dog: Dog = new Dog();
 
-      favorite.addDog(dog);
+      favorite.toggleDog(dog);
 
       expect(favorite.dogs.length).toEqual(expectedDogCount);
     });
 
-    it('should only add unique dogs to array', () => {
+    it('should toggle adding and removing dogs', () => {
       let expectedDogCount: number = 1;
       const favorite: Favorite = new Favorite();
       const dog1: Dog = new Dog();
@@ -24,20 +25,21 @@ describe('Favorite', () => {
       dog1.id = "dog1";
       dog2.id = "dog2";
 
-      favorite.addDog(dog1);
+      favorite.toggleDog(dog1);
       expect(favorite.dogs.length).toEqual(expectedDogCount);
 
-      favorite.addDog(dog1);
+      expectedDogCount = 0
+      favorite.toggleDog(dog1);
       expect(favorite.dogs.length).toEqual(expectedDogCount);
 
       expectedDogCount = 2
-      favorite.addDog(dog2);
+      favorite.toggleDog(dog1);
+      favorite.toggleDog(dog2);
       expect(favorite.dogs.length).toEqual(expectedDogCount);
 
-      favorite.addDog(dog2);
+      expectedDogCount = 1
+      favorite.toggleDog(dog2);
       expect(favorite.dogs.length).toEqual(expectedDogCount);
     });
   });
-
-
 });
