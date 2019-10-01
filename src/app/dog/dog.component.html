@@ -1,6 +1,8 @@
 <div class="dog-component">
   <div class="dogname">{{dog.name}}</div>
-  <img [src]="dog.thumbnail" >
+  <div class="img-wrapper">
+    <img [src]="dog.thumbnail">
+  </div>
   <button class="favorite">Favorite</button>
   <button class="like" (click)="dog.incrementLikeCount()">Like {{dog.likeCount}}</button>
 </div>
