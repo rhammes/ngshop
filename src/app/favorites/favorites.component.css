@@ -1,0 +1,6 @@
+.favorites-component {
+    border: 5px solid green;
+    min-width: 100px;
+    min-height: 100px;
+    float: right;
+}
