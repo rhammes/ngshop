@@ -5,6 +5,8 @@ export class Favorite {
     dogs: Dog[] = [];
 
     addDog(dog: Dog) {
-        this.dogs.push(dog);
+        if (!this.dogs.find(fDog => fDog.id == dog.id)) {
+            this.dogs.push(dog);
+        }
     }
 }
